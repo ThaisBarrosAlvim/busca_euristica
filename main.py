@@ -138,7 +138,7 @@ class Grafo:
 
 def main():
     # Criar o grafo da Romênia
-    grafo_romenia = Grafo.carrega_csv('cidades_romenia.csv', 'arestas_romenia.csv')
+    grafo_romenia = Grafo.carrega_csv('data/cidades_romenia.csv', 'data/arestas_romenia.csv')
     grafo_romenia.visualiza_cidades('Malha rodoviária da Romênia')
 
     # Busca Gulosa
