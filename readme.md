@@ -10,12 +10,12 @@ A malha rodoviária da Romênia é composta por diversas cidades conectadas por 
 
 ### Busca Gulosa
 
-O algoritmo de busca gulosa utiliza como heurística a distância estimada em linha reta até o objetivo. Neste caso, o objetivo é a cidade de Bucareste. A busca gulosa percorre o caminho em direção à cidade mais próxima de Bucareste, sem levar em consideração a distância já percorrida. 
+O algoritmo de busca gulosa utiliza como heurística a distância estimada em linha reta até o objetivo. Neste caso, o objetivo é a cidade de Bucareste. A busca gulosa percorre o caminho em direção à cidade que tem uma distancia mais próxima de Bucareste, sem levar em consideração a distancia local. 
 
 ![Busca Gulosa](https://raw.githubusercontent.com/ThaisBarrosAlvim/busca_euristica/master/plots/busca_g.png)
 
 ### Busca A*
 
-O algoritmo A* utiliza como heurística a distância estimada mais a distância local. Neste caso, a distância local é a distância já percorrida entre a origem e a cidade atual. A busca A* encontra o caminho ótimo em relação à distância total percorrida.
+O algoritmo A* utiliza como heurística a distância estimada mais a distância local. Neste caso, a distância local é levada em conta para tomar a decisão. A busca A* encontra o caminho ótimo em relação à busca gulosa.
 
 ![Busca A*](https://raw.githubusercontent.com/ThaisBarrosAlvim/busca_euristica/master/plots/busca_a.png)
