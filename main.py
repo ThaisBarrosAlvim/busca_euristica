@@ -38,7 +38,9 @@ class Grafo:
         distancia = 0
         atual = origem
         while atual != destino:
-            proximo = min(self.vertices[atual]['proximas'], key=lambda x: self.vertices[x[0]]['dist_obj'])
+            proximo = min(
+                self.vertices[atual]['proximas'],
+                key=lambda cid_prox: self.vertices[cid_prox[0]]['dist_obj'])
             if proximo is None:
                 return None
             distancia += proximo[1]
@@ -51,7 +53,9 @@ class Grafo:
         distancia = 0
         atual = origem
         while atual != destino:
-            proximo = min(self.vertices[atual]['proximas'], key=lambda x: x[1] + self.vertices[x[0]]['dist_obj'])
+            proximo = min(
+                self.vertices[atual]['proximas'],
+                key=lambda cid_prox: cid_prox[1] + self.vertices[cid_prox[0]]['dist_obj'])
             if proximo is None:
                 return None
             distancia += proximo[1]
@@ -95,14 +99,8 @@ class Grafo:
         if subtitulo is not None:
             plt.title(subtitulo)
 
-        # Definir a escala do gráfico
-        min_x = min(coords.values(), key=lambda x: x[0])[0]
-        max_x = max(coords.values(), key=lambda x: x[0])[0]
-        min_y = min(coords.values(), key=lambda x: x[1])[1]
-        max_y = max(coords.values(), key=lambda x: x[1])[1]
-        pad = 50
-        plt.xlim(min_x - pad, max_x + pad)
-        plt.ylim(min_y - pad, max_y + pad)
+        # Desativa os eixos
+        plt.axis('off')
 
         # Plotar as arestas como linhas
         for cidade1_nome, cidade2_nome, dist_local in arestas:
