@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 class Cidade:
     def __init__(self, nome, coordenadas: Optional[tuple] = None):
         self.nome = nome
+        # As coordenadas são apenas com objetivo de plotagem, não são utilizadas na busca
         self.coordenadas = coordenadas
 
     def __repr__(self):
@@ -70,6 +71,7 @@ class Grafo:
         # Adicionar as cidades
         cidades = pd.read_csv(cidades_csv, skiprows=0)
         for cidade in cidades.itertuples():
+            # As coordenadas são adicionadas apenas com objetivo de plotagem, não são utilizadas na busca
             grafo.adicionar_vertice(Cidade(cidade[1], (cidade[2], cidade[3])), cidade[4])
 
         # Adicionar as arestas
